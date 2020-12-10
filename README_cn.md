@@ -1,22 +1,28 @@
-#描述: 
+## 描述
 	**本版本只验证了机械32线雷达双端口，单双回波，垂直角度均匀1度和0.33度**
 	**驱动用ros1进行开发，支持ubuntu14.04,ubuntu16.04,ubuntu18.04下运行**
-##1. 建立工作空间,构建编译环境
-	mkdir -p ~/leishen_ws/src
-	cd ~/leishen_ws/src
-	tar –xvf lslidar_c32_V2.01.tar
-
-##2. 编译打包
-	cd ~/leishen_ws
-	catkin_make
+## 建立工作空间,构建编译环境
+```
+mkdir -p ~/leishen_ws/src
+cd ~/leishen_ws/src
+tar –xvf lslidar_c32_V2.01.tar
+```
+## 编译打包
+```
+cd ~/leishen_ws
+catkin_make
+```	
 	
-##3. 运行: 
-	source ~/leishen_ws /devel/setup.bash
-	roslaunch lslidar_c32_decoder lslidar_c32.launch
+## 运行: 
+```
+source ~/leishen_ws /devel/setup.bash
+roslaunch lslidar_c32_decoder lslidar_c32.launch
+```
 
 
 
-##4. lslidar_c32.launch配置文件说明: 
+## lslidar_c32.launch配置文件说明: 
+~~~xml
 	<arg name="device_ip" default="192.168.1.206" />	//设置为雷达对应的IP
 	<arg name="msop_port" default="2366" />	//数据包对应的端口
 	<arg name="difop_port" default="2367" />	//设备包对应的端口
@@ -35,7 +41,7 @@
 	<param name="publish_scan" value="true"/>	//true表示开启scan点云显示
 	<param name="scan_num" value="15"/>	//15表示显示第15条线对应的scan点云
 	<param name="config_vert" value="true"/>	//开启垂直角度校准
-
+~~~
 
 
 
